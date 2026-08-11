@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9a820"/><stop offset=".55" stop-color="#d98e1b"/><stop offset="1" stop-color="#a95f0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#dusk)"/>
+  <!-- залязващо слънце -->
+  <circle cx="400" cy="380" r="110" fill="#fdf0c8"/>
+  <circle cx="400" cy="380" r="145" fill="#fdf0c8" opacity=".25"/>
+  <!-- хоризонт -->
+  <path d="M0 400 Q200 370 400 395 T800 390 L800 600 L0 600 Z" fill="#5a4020"/>
+  <path d="M0 450 Q240 420 480 452 T800 445 L800 600 L0 600 Z" fill="#3a2a12"/>
+  <!-- силуети на кошери -->
+  <g fill="#241a0b">
+    <g transform="translate(180 0)">
+      <rect x="-55" y="360" width="110" height="95" rx="5"/>
+      <rect x="-64" y="344" width="128" height="20" rx="5"/>
+    </g>
+    <g transform="translate(600 20)">
+      <rect x="-50" y="360" width="100" height="88" rx="5"/>
+      <rect x="-58" y="345" width="116" height="19" rx="5"/>
+    </g>
+  </g>
+  <!-- птици/пчели в небето -->
+  <g stroke="#3a2a12" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M250 170 q10 -12 20 0 q10 -12 20 0"/>
+    <path d="M540 130 q9 -10 18 0 q9 -10 18 0"/>
+    <path d="M330 110 q8 -9 16 0 q8 -9 16 0"/>
+  </g>
+</svg>

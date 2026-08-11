@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f9edc9"/><stop offset="1" stop-color="#eed7a0"/>
+    </linearGradient>
+    <linearGradient id="honey3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaa41f"/><stop offset="1" stop-color="#b26e08"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg3)"/>
+  <rect x="80" y="430" width="640" height="18" rx="9" fill="#c8a24a"/>
+  <!-- три буркана -->
+  <g>
+    <g transform="translate(220 0)">
+      <rect x="-42" y="240" width="84" height="26" rx="9" fill="#8a6a3a"/>
+      <path d="M-48 276 q-8 14 -8 32 L-56 400 q0 32 30 32 L26 432 q30 0 30 -32 L56 308 q0 -18 -8 -32 Z" fill="#fffdf5" stroke="#d9c9a6" stroke-width="4"/>
+      <path d="M-50 320 L50 320 L50 400 q0 26 -26 26 L-24 426 q-26 0 -26 -26 Z" fill="url(#honey3)"/>
+      <rect x="-30" y="330" width="60" height="34" rx="6" fill="#fdf6e3" opacity=".9"/>
+    </g>
+    <g transform="translate(400 -30)">
+      <rect x="-46" y="240" width="92" height="28" rx="9" fill="#8a6a3a"/>
+      <path d="M-52 278 q-9 15 -9 34 L-61 428 q0 34 32 34 L29 462 q32 0 32 -34 L61 312 q0 -19 -9 -34 Z" fill="#fffdf5" stroke="#d9c9a6" stroke-width="4"/>
+      <path d="M-55 330 L55 330 L55 428 q0 28 -28 28 L-27 456 q-28 0 -28 -28 Z" fill="url(#honey3)"/>
+      <rect x="-33" y="342" width="66" height="38" rx="6" fill="#fdf6e3" opacity=".9"/>
+    </g>
+    <g transform="translate(580 10)">
+      <rect x="-38" y="240" width="76" height="24" rx="8" fill="#8a6a3a"/>
+      <path d="M-44 272 q-7 13 -7 29 L-51 392 q0 30 28 30 L23 422 q28 0 28 -30 L51 301 q0 -16 -7 -29 Z" fill="#fffdf5" stroke="#d9c9a6" stroke-width="4"/>
+      <path d="M-46 312 L46 312 L46 392 q0 24 -24 24 L-22 416 q-24 0 -24 -24 Z" fill="url(#honey3)"/>
+      <rect x="-27" y="322" width="54" height="30" rx="5" fill="#fdf6e3" opacity=".9"/>
+    </g>
+  </g>
+  <!-- лъжица за мед -->
+  <g transform="translate(400 150) rotate(-24)">
+    <rect x="-6" y="-90" width="12" height="120" rx="6" fill="#8a6a3a"/>
+    <ellipse cx="0" cy="48" rx="30" ry="26" fill="#8a6a3a"/>
+    <g stroke="#f9edc9" stroke-width="5"><line x1="-26" y1="38" x2="26" y2="38"/><line x1="-29" y1="50" x2="29" y2="50"/><line x1="-24" y1="62" x2="24" y2="62"/></g>
+  </g>
+  <path d="M400 235 q4 18 0 30" stroke="#c8860d" stroke-width="8" stroke-linecap="round" fill="none"/>
+</svg>

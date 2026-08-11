@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8ecc6"/><stop offset="1" stop-color="#eed7a0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg5)"/>
+  <!-- две ръце държат рамка с пита -->
+  <g transform="translate(400 300)">
+    <!-- рамка -->
+    <rect x="-190" y="-150" width="380" height="300" rx="10" fill="none" stroke="#8a6a3a" stroke-width="18"/>
+    <rect x="-172" y="-132" width="344" height="264" fill="#e9a820"/>
+    <!-- шестоъгълна текстура -->
+    <g stroke="#c8860d" stroke-width="4" fill="none" opacity=".8">
+      <path d="M-140 -100 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M-65 -100 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M10 -100 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M85 -100 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M-103 -35 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M-28 -35 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M47 -35 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M122 -35 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M-140 30 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M-65 30 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M10 30 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+      <path d="M85 30 l30 0 15 26 -15 26 -30 0 -15 -26 Z"/>
+    </g>
+    <!-- запечатана зона -->
+    <path d="M-172 -132 L172 -132 L172 -60 Q60 -20 -172 -70 Z" fill="#fdf6e3" opacity=".85"/>
+    <!-- уши на рамката -->
+    <rect x="-230" y="-16" width="40" height="32" rx="8" fill="#8a6a3a"/>
+    <rect x="190" y="-16" width="40" height="32" rx="8" fill="#8a6a3a"/>
+  </g>
+  <!-- пчелички по рамката -->
+  <g fill="#3a2a12">
+    <ellipse cx="330" cy="250" rx="12" ry="8"/>
+    <ellipse cx="480" cy="380" rx="12" ry="8" transform="rotate(24 480 380)"/>
+    <ellipse cx="270" cy="400" rx="12" ry="8" transform="rotate(-18 270 400)"/>
+  </g>
+</svg>
