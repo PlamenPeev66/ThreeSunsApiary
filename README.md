@@ -32,5 +32,3 @@ WebSite/
 (shared hosting, GitHub Pages, Cloudflare Pages и т.н.).
 Шрифтовете се зареждат от Google Fonts, т.е. нужен е интернет; без него сайтът
 работи с резервните системни шрифтове.
-# ThreeSunsApiary
-# ThreeSunsApiary
