@@ -2,6 +2,33 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- Плавното превъртане обратно (изключено е в <head> за скрола при зареждане) ---
+  addEventListener('load', () => {
+    setTimeout(() => { document.documentElement.style.scrollBehavior = ''; }, 0);
+  }, { once: true });
+
+  // --- Към подстраница: бележим, че тръгваме от сайта ---
+  document.querySelectorAll('a[href$=".html"]').forEach(a =>
+    a.addEventListener('click', () => {
+      try { sessionStorage.setItem('ts-from-site', '1'); } catch (_) {}
+    }));
+
+  // --- „Обратно“ на подстраниците: назад в историята, за да заварим страницата
+  //     точно както сме я оставили; иначе (дошли отвън) следваме линка ---
+  let fromSite = false;
+  try {
+    fromSite = sessionStorage.getItem('ts-from-site') === '1';
+    sessionStorage.removeItem('ts-from-site');
+  } catch (_) {}
+
+  document.querySelectorAll('a[data-back]').forEach(a =>
+    a.addEventListener('click', e => {
+      if (fromSite && history.length > 1) {
+        e.preventDefault();
+        history.back();
+      }
+    }));
+
   // --- Хедър: сянка при скрол ---
   const header = document.querySelector('.site-header');
   const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 10);
@@ -29,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Активна секция в навигацията ---
   const links = [...document.querySelectorAll('.site-nav .nav-link')];
   const sections = links
+    .filter(l => l.getAttribute('href').startsWith('#'))
     .map(l => document.querySelector(l.getAttribute('href')))
     .filter(Boolean);
 
@@ -52,7 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  // При връщане назад/напред в историята страницата трябва да изглежда както сме я
+  // оставили — без повторно появяване на елементите и без броячи от нула.
+  const navEntry = performance.getEntriesByType('navigation')[0];
+  const restored = !!navEntry && navEntry.type === 'back_forward';
+
+  document.querySelectorAll('.reveal').forEach(el =>
+    restored ? el.classList.add('is-visible') : revealObserver.observe(el));
 
   // --- Броячи в секция „Пчелинът“ ---
   const animateCount = el => {
@@ -77,10 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.4 });
 
   const stats = document.querySelector('.stats');
-  if (stats) statsObserver.observe(stats);
+  if (stats) {
+    if (restored) stats.querySelectorAll('[data-count]').forEach(el => { el.textContent = el.dataset.count; });
+    else statsObserver.observe(stats);
+  }
 
   // --- Лайтбокс за галерията ---
   const lightbox = document.querySelector('.lightbox');
+  if (!lightbox) return;
+
   const lbImg = lightbox.querySelector('img');
   const lbCaption = lightbox.querySelector('.lightbox-caption');
 
